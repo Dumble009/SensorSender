@@ -17,5 +17,9 @@ sock.addEventListener("error", (e) => {
 });
 
 btn.addEventListener("click", (e) => {
-  sock.send("hello");
+  sendEuler(0.0, 1.0, 2.0);
 });
+
+function sendEuler(alpha, beta, gamma) {
+  sock.send(alpha.toString() + ":" + beta.toString() + ":" + gamma.toString());
+}
