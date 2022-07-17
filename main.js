@@ -1,4 +1,4 @@
-const sock = new WebSocket("wss://aed9-49-251-112-64.ap.ngrok.io");
+const sock = new WebSocket(wsAddress);
 
 sock.addEventListener("open", (e) => {
   console.log("onOpen");
