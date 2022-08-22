@@ -13,7 +13,7 @@ sock.addEventListener("message", (e) => {
 
 sock.addEventListener("close", (e) => {
   console.log("onClose");
-  connectionState.innerText = "Closed";
+  connectionState.innerText = "Closed リロードしてください";
 });
 
 sock.addEventListener("error", (e) => {
