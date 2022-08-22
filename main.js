@@ -1,3 +1,12 @@
+// PWAのためのサービスワーカーの読み込み処理
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').then(async (registration) => {
+    console.log("serviceWorker registration successed");
+  }).catch((err) => {
+    console.log("serviceWorker registration failed: ", err);
+  });
+}
+
 const sock = new WebSocket(wsAddress);
 const angleMsg = document.getElementById("angle");
 const connectionState = document.getElementById("connection");
