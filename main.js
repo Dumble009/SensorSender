@@ -1,8 +1,10 @@
 const sock = new WebSocket(wsAddress);
 const angleMsg = document.getElementById("angle");
+const connectionState = document.getElementById("connection");
 
 sock.addEventListener("open", (e) => {
   console.log("onOpen");
+  connectionState.innerText = "Opened";
 });
 
 sock.addEventListener("message", (e) => {
@@ -11,10 +13,12 @@ sock.addEventListener("message", (e) => {
 
 sock.addEventListener("close", (e) => {
   console.log("onClose");
+  connectionState.innerText = "Closed";
 });
 
 sock.addEventListener("error", (e) => {
   console.log("onError : " + e);
+  connectionState.innerText = e;
 });
 
 btn.addEventListener("click", (e) => {
