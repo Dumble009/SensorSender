@@ -1,4 +1,5 @@
 const sock = new WebSocket(wsAddress);
+const angleMsg = document.getElementById("angle");
 
 sock.addEventListener("open", (e) => {
   console.log("onOpen");
@@ -22,4 +23,5 @@ btn.addEventListener("click", (e) => {
 
 function sendEuler(alpha, beta, gamma) {
   sock.send(alpha.toString() + ":" + beta.toString() + ":" + gamma.toString());
+  angleMsg.innerText = beta.toString();
 }
