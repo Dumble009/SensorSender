@@ -26,6 +26,14 @@ btn.addEventListener("click", (e) => {
 });
 
 function sendEuler(alpha, beta, gamma) {
-  sock.send(alpha.toString() + ":" + beta.toString() + ":" + gamma.toString());
+  sock.send(
+    alpha.toString() +
+      ":" +
+      beta.toString() +
+      ":" +
+      gamma.toString() +
+      "," +
+      Date.UTC()
+  );
   angleMsg.innerText = beta.toString();
 }
