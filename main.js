@@ -33,7 +33,7 @@ function sendEuler(alpha, beta, gamma) {
       ":" +
       gamma.toString() +
       "," +
-      Date.UTC()
+      Date.now()
   );
   angleMsg.innerText = beta.toString();
 }
